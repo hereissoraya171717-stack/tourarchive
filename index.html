@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>追巡碎片 · Pics from the Time we spent together</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- =========================================================
+     COVER
+========================================================= -->
+
+<section class="cover-screen" id="coverScreen">
+
+    <div class="music-lines" aria-hidden="true">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <div class="stage-light light-a"></div>
+    <div class="stage-light light-b"></div>
+    <div class="stage-light light-c"></div>
+
+    <div class="cover-stars">✦　✧　✦</div>
+
+    <div class="cover-main">
+
+        <div class="cover-small">
+            PICS FROM THE TIME WE SPENT TOGETHER
+        </div>
+
+        <h1>追巡碎片</h1>
+
+        <p class="cover-subtitle">
+            Follow the white rabbit,<br>
+            into your wild dreams.
+        </p>
+
+        <div class="rabbit-mark">
+            ♡
+        </div>
+
+    </div>
+
+    <div class="ticket-folder" id="ticketFolder">
+
+        <div class="folder-back"></div>
+
+        <div class="folder-paper">
+
+            <div class="folder-hole hole-1"></div>
+            <div class="folder-hole hole-2"></div>
+            <div class="folder-hole hole-3"></div>
+
+            <div class="folder-label">
+                MUSICAL<br>
+                MEMORIES
+            </div>
+
+            <div class="folder-number">
+                TOUR<br>
+                ARCHIVE
+            </div>
+
+            <div class="folder-year" id="coverYear">
+                2026
+            </div>
+
+        </div>
+
+        <button
+            class="open-diary"
+            id="openDiary"
+            type="button"
+        >
+            OPEN THE DIARY
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     DIARY APP
+========================================================= -->
+
+<section class="diary-screen" id="diaryScreen">
+
+    <header class="diary-header">
+
+        <button
+            class="header-button"
+            id="closeDiary"
+            type="button"
+        >
+            ← COVER
+        </button>
+
+        <div class="header-logo">
+            <span>追巡碎片</span>
+            <small>PICS FROM THE TIME WE SPENT TOGETHER</small>
+        </div>
+
+        <div class="header-actions">
+
+            <button
+                class="header-button"
+                id="summaryButton"
+                type="button"
+            >
+                SUMMARY
+            </button>
+
+            <button
+                class="header-button header-add"
+                id="addShowButton"
+                type="button"
+            >
+                + ADD TOUR / SHOW
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- =====================================================
+         BOOK
+    ====================================================== -->
+
+    <main class="book-area">
+
+        <div class="book">
+
+            <div class="book-shadow"></div>
+
+            <div
+                class="book-spread"
+                id="bookSpread"
+            >
+
+                <div
+                    class="book-page page-left"
+                    id="leftPage"
+                ></div>
+
+                <div class="book-spine">
+                    <div class="spine-line"></div>
+                </div>
+
+                <div
+                    class="book-page page-right"
+                    id="rightPage"
+                ></div>
+
+            </div>
+
+
+            <!-- page turning overlay -->
+
+            <div
+                class="flip-sheet"
+                id="flipSheet"
+            >
+                <div
+                    class="flip-sheet-content"
+                    id="flipSheetContent"
+                ></div>
+            </div>
+
+        </div>
+
+
+        <div class="book-navigation">
+
+            <button
+                id="prevPage"
+                type="button"
+                class="page-arrow"
+            >
+                ←
+            </button>
+
+            <div
+                class="page-counter"
+                id="pageCounter"
+            >
+                01 / 01
+            </div>
+
+            <button
+                id="nextPage"
+                type="button"
+                class="page-arrow"
+            >
+                →
+            </button>
+
+        </div>
+
+    </main>
+
+
+    <!-- =====================================================
+         EDIT DRAWER
+    ====================================================== -->
+
+    <aside
+        class="edit-drawer"
+        id="editDrawer"
+    >
+
+        <div class="drawer-header">
+
+            <div>
+                <span class="drawer-kicker">TICKET DIY</span>
+                <h3 id="drawerTitle">EDIT TICKET</h3>
+            </div>
+
+            <button
+                class="drawer-close"
+                id="closeDrawer"
+                type="button"
+            >
+                ×
+            </button>
+
+        </div>
+
+
+        <div class="drawer-body">
+
+            <section class="drawer-section">
+
+                <div class="drawer-section-title">
+                    TICKET
+                </div>
+
+                <button
+                    class="drawer-action"
+                    id="rotateTicketLeft"
+                    type="button"
+                >
+                    ↶ ROTATE LEFT
+                </button>
+
+                <button
+                    class="drawer-action"
+                    id="rotateTicketRight"
+                    type="button"
+                >
+                    ↷ ROTATE RIGHT
+                </button>
+
+                <button
+                    class="drawer-action danger"
+                    id="deleteShow"
+                    type="button"
+                >
+                    DELETE THIS TICKET
+                </button>
+
+            </section>
+
+
+            <section class="drawer-section">
+
+                <div class="drawer-section-title">
+                    ADD TO TICKET
+                </div>
+
+                <button
+                    class="drawer-action"
+                    id="addText"
+                    type="button"
+                >
+                    ＋ TEXT
+                </button>
+
+                <button
+                    class="drawer-action"
+                    id="addPhoto"
+                    type="button"
+                >
+                    ＋ PHOTO
+                </button>
+
+            </section>
+
+
+            <section class="drawer-section">
+
+                <div class="drawer-section-title">
+                    STICKERS
+                </div>
+
+                <div class="sticker-grid">
+
+                    <button
+                        class="sticker-button"
+                        data-sticker="♡"
+                        type="button"
+                    >
+                        ♡
+                    </button>
+
+                    <button
+                        class="sticker-button"
+                        data-sticker="✦"
+                        type="button"
+                    >
+                        ✦
+                    </button>
+
+                    <button
+                        class="sticker-button"
+                        data-sticker="★"
+                        type="button"
+                    >
+                        ★
+                    </button>
+
+                    <button
+                        class="sticker-button"
+                        data-sticker="☾"
+                        type="button"
+                    >
+                        ☾
+                    </button>
+
+                    <button
+                        class="sticker-button"
+                        data-sticker="✿"
+                        type="button"
+                    >
+                        ✿
+                    </button>
+
+                    <button
+                        class="sticker-button"
+                        data-sticker="♪"
+                        type="button"
+                    >
+                        ♪
+                    </button>
+
+                    <button
+                        class="sticker-button"
+                        data-sticker="♢"
+                        type="button"
+                    >
+                        ♢
+                    </button>
+
+                    <button
+                        class="sticker-button"
+                        data-sticker="☁"
+                        type="button"
+                    >
+                        ☁
+                    </button>
+
+                    <button
+                        class="sticker-button"
+                        data-sticker="🚗"
+                        type="button"
+                    >
+                        🚗
+                    </button>
+
+                    <button
+                        class="sticker-button"
+                        data-sticker="🐶"
+                        type="button"
+                    >
+                        🐶
+                    </button>
+
+                </div>
+
+            </section>
+
+
+            <section
+                class="drawer-section selected-controls"
+                id="selectedControls"
+            >
+
+                <div class="drawer-section-title">
+                    SELECTED ITEM
+                </div>
+
+                <div class="selected-controls-grid">
+
+                    <button
+                        id="scaleDown"
+                        type="button"
+                    >
+                        −
+                    </button>
+
+                    <span id="scaleValue">
+                        100%
+                    </span>
+
+                    <button
+                        id="scaleUp"
+                        type="button"
+                    >
+                        ＋
+                    </button>
+
+                    <button
+                        id="itemRotateLeft"
+                        type="button"
+                    >
+                        ↶
+                    </button>
+
+                    <button
+                        id="itemRotateRight"
+                        type="button"
+                    >
+                        ↷
+                    </button>
+
+                    <button
+                        id="deleteItem"
+                        type="button"
+                    >
+                        DELETE
+                    </button>
+
+                </div>
+
+            </section>
+
+
+            <div class="drawer-tip">
+                TIP<br>
+                拖动元素可以自由排版。<br>
+                双击文字可以重新编辑。
+            </div>
+
+        </div>
+
+    </aside>
+
+
+    <!-- =====================================================
+         SHOW FORM
+    ====================================================== -->
+
+    <div
+        class="modal"
+        id="showModal"
+        aria-hidden="true"
+    >
+
+        <div class="modal-backdrop"></div>
+
+        <div class="show-form-paper">
+
+            <button
+                class="modal-close"
+                id="closeShowModal"
+                type="button"
+            >
+                ×
+            </button>
+
+            <div class="form-kicker">
+                MY MUSICAL MEMORY
+            </div>
+
+            <h2 id="formTitle">
+                ADD A NEW SHOW
+            </h2>
+
+            <p class="form-intro">
+                留住那天的碎片。
+            </p>
+
+            <form id="showForm">
+
+                <div class="form-grid">
+
+                    <label>
+                        <span>SHOW TITLE</span>
+                        <input
+                            id="showTitle"
+                            type="text"
+                            placeholder="例如：五字神剧"
+                            required
+                        >
+                    </label>
+
+                    <label>
+                        <span>DATE</span>
+                        <input
+                            id="showDate"
+                            type="date"
+                            required
+                        >
+                    </label>
+
+                    <label>
+                        <span>CITY</span>
+                        <input
+                            id="showCity"
+                            type="text"
+                            placeholder="例如：沪"
+                        >
+                    </label>
+
+                    <label>
+                        <span>THEATER</span>
+                        <input
+                            id="showTheater"
+                            type="text"
+                            placeholder="例如：上海梅奔"
+                        >
+                    </label>
+
+                </div>
+
+
+                <label>
+                    <span>CAST</span>
+
+                    <textarea
+                        id="showCast"
+                        placeholder="你何谁一起度过了那天？"
+                    ></textarea>
+                </label>
+
+
+                <label>
+                    <span>MY NOTE</span>
+
+                    <textarea
+                        id="showNote"
+                        class="note-input"
+                        placeholder="关于那天，我想留住的是……？"
+                    ></textarea>
+                </label>
+
+
+                <div class="rating-row">
+
+                    <div>
+                        <span>给自己留个repo吧</span>
+                    </div>
+
+                    <div
+                        class="rating-picker"
+                        id="ratingPicker"
+                    >
+
+                        <button data-rating="1" type="button">★</button>
+                        <button data-rating="2" type="button">★</button>
+                        <button data-rating="3" type="button">★</button>
+                        <button data-rating="4" type="button">★</button>
+                        <button data-rating="5" type="button">★</button>
+
+                    </div>
+
+                </div>
+
+
+                <div class="ticket-style-row">
+
+                    <span>TICKET STYLE</span>
+
+                    <div class="ticket-style-picker">
+
+                        <button
+                            type="button"
+                            data-style="0"
+                            class="style-choice style-choice-0"
+                        ></button>
+
+                        <button
+                            type="button"
+                            data-style="1"
+                            class="style-choice style-choice-1"
+                        ></button>
+
+                        <button
+                            type="button"
+                            data-style="2"
+                            class="style-choice style-choice-2"
+                        ></button>
+
+                        <button
+                            type="button"
+                            data-style="3"
+                            class="style-choice style-choice-3"
+                        ></button>
+
+                        <button
+                            type="button"
+                            data-style="4"
+                            class="style-choice style-choice-4"
+                        ></button>
+
+                        <button
+                            type="button"
+                            data-style="5"
+                            class="style-choice style-choice-5"
+                        ></button>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    class="save-show"
+                    type="submit"
+                >
+                    一键留存！
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         IMAGE IMPORT
+    ====================================================== -->
+
+    <input
+        type="file"
+        id="imageInput"
+        accept="image/*"
+        multiple
+        hidden
+    >
+
+
+    <!-- =====================================================
+         TOAST
+    ====================================================== -->
+
+    <div
+        class="toast"
+        id="toast"
+    ></div>
+
+</section>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
